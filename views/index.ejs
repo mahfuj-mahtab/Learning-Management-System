@@ -1,0 +1,66 @@
+<%- include("Home/Header"); %>
+<div class="banner">
+<div class="main_banner">
+
+<div class="left_banner">
+    <h1 class="bannerh1">Welcome To <span style="color: #03203C"> Tutorial Hubs</span></h1>
+    <i class="banner_i">A Place For Great Learning</i>
+    <form action="">
+        <input type="text" placeholder="Please Enter What You Want To Learn" class="search"><input class="searchbtn" type="submit" value="Search">
+    </form>
+    <a href="" class="youtube_button">Visit Youtube</a>
+    <a href="" class="shop_button">Shop</a>
+</div>
+<div class="right_banner">
+    <!-- <img class="banner_img" src="/images/Banner.png" alt=""> -->
+</div>
+</div>
+</div>
+
+<!-- about section -->
+<div class="about_section">
+    <div class="left_about_section">
+        <h1 class="about_h1">What Is Tutorial Hubs?</h1>
+        <span class="about_span">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus aut qui magni rem deserunt, temporibus minima aperiam perferendis veniam suscipit! Exercitationem rerum cupiditate beatae dolorem quisquam sit ut hic excepturi ex voluptas reprehenderit distinctio accusamus necessitatibus saepe ratione ducimus repudiandae tempora aliquid, eaque quaerat! Quod inventore et minus nulla adipisci. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo sapiente placeat necessitatibus tenetur laudantium repellendus ex iusto nulla consectetur. Assumenda autem debitis consequuntur aspernatur amet aliquid sunt expedita laboriosam nam!</span>
+    </div>
+    <div class="right_about_section">
+        <!-- <video class="about_video" width="500" height="300" poster="/images/b.jpg" controls>
+            <source src="/videos/movie.mp4" type="video/mp4">
+            <source src="movie.ogg" type="video/ogg">
+            Your browser does not support the video tag.
+         </video> -->
+    </div>
+
+</div>
+<div class="show_courses">
+    <h1 class="show_courses_h1">Our Courses</h1>
+<% results.forEach(function(result){ %>
+    
+        <div class="course">
+            <img class="course_banner_img" src="/Images/uploaded/<%= result.courselogo %>" alt="">
+            <p class="course_title"><%= result.coursename %></p>
+            <p class="course_video_count">Article : 30</p>
+            <p class="course_video_price">Price : Free</p><br><br>
+            <a href="/course/<%= result.coursename.replaceAll(' ','_') %>" class="course_details_button">Start Course</a>
+        </div>
+
+
+<% }); %>
+
+
+
+
+  
+</div>
+
+<div class="aboutquizsection">
+    <div class="leftaboutquizsection"></div>
+    <div class="rightaboutquizsection"></div>
+</div>
+
+
+
+
+
+
+<%- include("Home/Footer"); %>

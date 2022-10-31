@@ -1,0 +1,47 @@
+<%- include("./Header",users) %>
+<script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
+
+
+<div class="container">
+    <div class="main_container">
+        <%- include("./component/leftbar") %>
+
+
+        <% if (users[0].roles === "admin" || users[0].roles === "moderator") { %>
+        <div class="right_container fr-view" >
+            <form action="/admin/addarticle" method="post" enctype="multipart/form-data">
+                <p>Article Title</p>
+                <input type="text" name="articletitle" id="" class="right_container_input" placeholder="Enter Article Title"">
+                <p>Article Body</p>
+                
+                <textarea name="articlebody" id="editor" cols="60" rows="30"></textarea> 
+          
+                <br><br>
+
+                <p>Course</p>
+                <select name="coursename" id="" class="right_container_select">
+                    <% articledetails.forEach(function(articledetail){ %>
+                    <option value="<%= articledetail.coursename %>"><%= articledetail.coursename %></option>
+                    <%  }); %>
+                </select>
+                <br>
+                <input type="submit" value="Submit" class="right_container_submit">
+            </form>
+        </div>
+        <% } else { %>
+            <script>alert("Only Admin And Moderator Can See")</script>
+        <p>Sorry Only Admin and Moderator Can See</p>
+        <% } %>
+    </div>
+</div>
+
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
+
+
+<%- include("./Footer") %>

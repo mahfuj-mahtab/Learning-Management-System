@@ -1,0 +1,35 @@
+<%- include("./Header",users) %>
+
+<div class="container">
+    <div class="main_container">
+        <%- include("./component/leftbar") %>
+
+
+        <% if (users[0].roles === "admin" || users[0].roles === "moderator") { %>
+        <div class="right_container">
+            <form action="" method="post" enctype="multipart/form-data">
+                <p>Video Title</p>
+                <input type="text" name="video_title" id="" class="right_container_input" placeholder="Enter Video Title">
+                <p>Video File</p>
+                <input type="file" name="video" > <br><br>
+
+                <p>Course</p>
+                <select name="course" id="" class="right_container_select">
+                    <% courses.forEach(function(course){ %>
+                    <option value="<%= course.course_name %>"><%= course.course_name %></option>
+                    <%  }); %>
+                </select>
+                <br>
+                <input type="submit" value="Submit" class="right_container_submit">
+            </form>
+        </div>
+        <% } else { %>
+            <script>alert("Only Admin And Moderator Can See")</script>
+        <p>Sorry Only Admin and Moderator Can See</p>
+        <% } %>
+    </div>
+</div>
+
+
+
+<%- include("./Footer") %>

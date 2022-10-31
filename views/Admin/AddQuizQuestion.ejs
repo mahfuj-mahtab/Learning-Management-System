@@ -1,0 +1,55 @@
+<%- include("./Header",users) %>
+<script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
+
+
+<div class="container">
+    <div class="main_container">
+        <%- include("./component/leftbar") %>
+
+
+        <% if (users[0].roles === "admin" || users[0].roles === "moderator") { %>
+        <div class="right_container fr-view" >
+            <form action="/admin/addquizquestion" method="post" enctype="multipart/form-data">
+                <p>Question</p>
+                <input type="text" name="question" id="" class="right_container_input" placeholder="Enter Article Title"">
+                <p>Option 1</p>
+                <input type="text" name="option1">
+                <br>
+                <p>Option 2</p>
+                <input type="text" name="option2">
+                <br>
+                <p>Option 3</p>
+                <input type="text" name="option3">
+                <br>
+                <p>Option 4</p>
+                <input type="text" name="option4">
+                <br>
+                <p>Correct Ans</p>
+                <input type="text" name="correctans">
+                <br>
+                <p>Quiz Name</p>
+                <select name="quizname" id="">
+                    <% quizdetails.forEach(function(quizdetail){ %>
+                        <option value="<%= quizdetail.quizname %>"><%= quizdetail.quizname %></option>
+                        <%  }); %>
+                </select> <br><br><br>
+                <input type="submit" value="Submit" class="right_container_submit">
+            </form>
+        </div>
+        <% } else { %>
+            <script>alert("Only Admin And Moderator Can See")</script>
+        <p>Sorry Only Admin and Moderator Can See</p>
+        <% } %>
+    </div>
+</div>
+
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
+
+
+<%- include("./Footer") %>

@@ -1,0 +1,54 @@
+<%- include("Home/Header"); %>
+
+
+<div class="showQuiz">
+    <div class="mainShowQuiz">
+        
+
+        <div class="quizQuestion">
+            <h2 class="quizTitle"><%= results[0].quizname %></h2><br>
+<!--            
+        <p class="timer">
+            
+            
+            
+            sec Remaining</p><br> -->
+        <div class="quizDetails">  <%- results[0].quizdetail %></div>
+
+        <!-- <a href="" id="next">Start</a> -->
+        
+       <div class="quiz">
+        <%- results[0].url %>
+       </div>
+
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%- include("Home/Footer"); %>

@@ -1,0 +1,52 @@
+<%- include("./Header",users) %>
+<div class="container">
+    <div class="main_container">
+        <%- include("./component/leftbar") %>
+
+
+        <div class="right_container">
+            <% if (users[0].roles === "admin" || users[0].roles === "moderator") { %>
+            
+            <table style="table-layout:fixed;">
+                <tr>
+                    <th>Title</th>
+                    <th>Article Body</th>
+                    <th>Course Name</th>
+                    <th>Added By</th>
+                    <th>Action</th>
+                    <th>Action</th>
+                   
+                    
+
+                   
+
+                    
+                </tr>
+                <% articleresult.forEach(function(article){ %>
+                    <tr>
+                        <td> <%= article.articletitle %> </td>
+                        <td> <%= article.articlebody.substring(0,100) %> ...................</td>
+                        <td> <%= article.coursename %> </td>
+                        <td> <%= article.addedby %></td>
+                        <td><a href="/admin/article/edit/<%= article._id %>">   Edit</a></td>
+                        <td><a href="/admin/article/delete/<%= article._id %>">   Delete</a></td>
+                        
+    
+                    </tr>
+              <%  }); %>
+                
+            </table>
+            <% } else { %>
+                <script>alert("Only Admin And Moderator Can See")</script>
+            <p>Sorry Only Admin and Moderator Can See</p>
+            <% } %>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<%- include("./Footer") %>

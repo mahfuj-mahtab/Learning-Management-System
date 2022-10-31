@@ -1,0 +1,51 @@
+<%- include("./Header",user) %>
+<div class="container">
+    <div class="main_container">
+        <%- include("./component/leftbar") %>
+
+
+        <div class="right_container">
+            <% if (user[0].roles === "admin" || user[0].roles === "moderator" || user[0].roles === "manager" || user[0].roles === "Admin") { %>
+            
+            <table style="table-layout:fixed;">
+                <tr>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>Added By</th>
+                    <th>User Name</th>
+                    <th>Verified ?</th>
+                    <th>Action</th>
+                    <th>Action</th>
+                    
+
+                   
+
+                    
+                </tr>
+                <% users.forEach(function(user){ %>
+                    <tr>
+                        <td> <%= user.name %> </td>
+                        <td> <%= user.email %> </td>
+                        <td> <%= user.added_by %></td>
+                        <td> <%= user.user_name %></td>
+                        <td><%= user.approved %></td>
+                        <td> <a href="/admin/instructor/<%= user.user_name %>"> Details</a></td>
+                        <td><a href="/admin/instructor/edit/<%= user.user_name %>">   Edit</a></td>
+                        
+    
+                    </tr>
+              <%  }); %>
+                
+            </table>
+            <% } else { %>
+                <script>alert("Only Admin And Moderator Can See")</script>
+            <p>Sorry Only Admin and Moderator Can See</p>
+            <% } %>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<%- include("./Footer") %>

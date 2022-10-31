@@ -1,0 +1,31 @@
+<%- include("./Header",users) %>
+
+<div class="container">
+    <div class="main_container">
+<%- include("./component/leftbar") %>
+        
+
+<% if (users[0].roles === "admin" || users[0].roles === "moderator") { %>
+    <div class="right_container">
+        <form action="/admin/addcategory" method="post" enctype="multipart/form-data">
+           <p>Category Name</p>
+           <input type="text" class="right_container_input" name="categoryname" id="" placeholder="Enter Course Name">
+
+           <br>
+         
+           <p>Category Logo</p>
+           <input type="file" name="categorylogo" id="" placeholder="Enter Course Banner Photo"> <br><br>
+
+
+           <input type="submit" value="Submit" class="right_container_submit">
+
+        </form>
+    </div>
+    <% } else { %>
+        <script>alert("Only Admin And Moderator Can See")</script>
+    <p>Sorry Only Admin and Moderator Can See</p>
+    <% } %>
+
+    </div>
+</div>
+<%- include("./Footer") %>

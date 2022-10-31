@@ -1,0 +1,50 @@
+<%- include("./Header",users) %>
+<div class="container">
+    <div class="main_container">
+        <%- include("./component/leftbar") %>
+
+
+        <div class="right_container">
+            <% if (users[0].roles === "admin" || users[0].roles === "moderator") { %>
+
+            <form class="add_user" action="/admin/adduser" method="post">
+                <p>Full Name</p>
+                <input class="right_container_input" type="text" name="fullname" id="" placeholder="Enter Full Name">
+
+                <p>Email Address</p>
+                <input class="right_container_input" type="email" name="email" id="" placeholder="Enter Email Address">
+                <p>User Name</p>
+                <input class="right_container_input" type="text" name="user_name" id="" placeholder="Enter User Name">
+                <p>Password</p>
+                <input class="right_container_input" type="password" name="password" id="" placeholder="******************">
+                <p>Phone Number</p>
+                <input class="right_container_input" type="number" name="phone" id="" placeholder="Enter Phone Number">
+
+                <p>Role</p>
+                <select class="right_container_select" name="role" id="">
+                    <% if (users[0].roles === "admin") { %>
+                    <option  value="admin">Admin</option>
+                    <option value="moderator">Moderator</option>
+                    <option value="manager">Manager</option>
+                    <option value="member">Member</option>
+                    <% } else { %>
+                        <option value="moderator">Moderator</option>
+                        <option value="manager">Manager</option>
+                        <option value="member">Member</option>
+                        <% } %>
+
+                </select><br>
+                <input class="right_container_submit" type="submit" value="Submit">
+            </form>
+            <% } else { %>
+                <script>alert("Only Admin And Moderator Can See")</script>
+            <p>Sorry Only Admin and Moderator Can See</p>
+            <% } %>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<%- include("./Footer") %>

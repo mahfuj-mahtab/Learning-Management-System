@@ -1,0 +1,74 @@
+<%- include("./Header",users) %>
+<script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
+
+<div class="container">
+    <div class="main_container">
+        <%- include("./component/leftbar") %>
+
+   
+   
+   
+        <% if (users[0].roles === "admin" || users[0].roles === "moderator") { %>
+    <div class="right_container">
+        <form action="/admin/addarticledetails" method="post" enctype="multipart/form-data">
+           <p>Article Course Name</p>
+           <input type="text" class="right_container_input" name="course_name" id="" placeholder="Enter Course Name">
+
+           <p>Course Details</p>
+           <textarea name="articlecoursedetail" id="editor" cols="60" rows="30"></textarea> 
+           
+           <p>Course Price</p>
+           <input type="number" class="right_container_input" name="course_price" id="" placeholder="Enter Course Price">
+
+           <p>Select Instructor</p>
+           <select class="right_container_select" name="instructor" id="">
+            <option value="none">None</option>
+               <% instructors.forEach(function(instructor){ %>
+               <option  value="<%= instructor.user_name %>"><%= instructor.user_name %></option>
+               <%  }); %>
+           </select>
+           <br>
+           <p>Course Banner Photo</p>
+           <input type="file" name="course_banner_photo" id="" placeholder="Enter Course Banner Photo"> <br><br>
+           <p>Course Logo</p>
+           <input type="file" name="course_logo" id="" placeholder="Enter Course Banner Photo"> <br><br>
+
+           <p>Add Category</p>
+           
+           <select class="right_container_select" name="category" id="">
+            <option value="none">None</option>
+            <% catresults.forEach(function(catresult){ %>
+                <option  value="<%= catresult.categoryname %>"><%= catresult.categoryname %></option>
+                <%  }); %>
+            
+           </select>
+           <p>Add Subject</p>
+           <select class="right_container_select" name="subject" id="">
+            <option value="none">None</option>
+            <% subresults.forEach(function(subresult){ %>
+                <option  value="<%= subresult.subjectname %>"><%= subresult.subjectname %></option>
+                <%  }); %>
+           </select> <br><br>
+
+           <input type="submit" value="Submit" class="right_container_submit">
+
+        </form>
+    </div>
+    <% } else { %>
+        <script>alert("Only Admin And Moderator Can See")</script>
+    <p>Sorry Only Admin and Moderator Can See</p>
+    <% } %>
+   
+   
+    </div>
+</div>
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
+
+
+<%- include("./Footer") %>

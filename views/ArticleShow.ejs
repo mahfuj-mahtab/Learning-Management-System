@@ -1,0 +1,32 @@
+<%- include("Home/Header"); %>
+
+
+<div class="articledetails">
+    <div class="main">
+        <div class="left_articlesection">
+            <img class="logo" src="/Images/uploaded/<%= articledetailsresults[0].courselogo %>" alt="">
+            <h2 class="articledetailsname"><%= articledetailsresults[0].coursename %></h2>
+            <ul>
+                <% articleresults.forEach(function(article){ %>
+
+              
+                <li><a href="/course/<%= articledetailsresults[0].coursename.replaceAll(' ','_') %>/<%= article.articletitle.replaceAll(' ','_') %>"><%= article.articletitle %></a></li>
+                <%   }); %>
+            </ul>
+        </div>
+        <div class="right_articlesection">
+            <img src="/Images/uploaded/<%= articledetailsresults[0].coursebanner %>" class="article_banner_img" alt="">
+            <div class="article">
+                <%- articledetailsresults[0].articlecoursedetail %>
+            </div>
+        </div>
+        <div class="advertisesection">
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<%- include("Home/Footer"); %>

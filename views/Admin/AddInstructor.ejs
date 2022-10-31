@@ -1,0 +1,52 @@
+<%- include("./Header",users) %>
+<div class="container">
+    <div class="main_container">
+        <%- include("./component/leftbar") %>
+
+
+        <div class="right_container">
+            <% if (users[0].roles === "admin" || users[0].roles === "moderator" || users[0].roles === "manager") { %>
+
+            <form class="add_user" action="/admin/addinstructor" method="post">
+                <p>Full Name</p>
+                <input class="right_container_input" type="text" name="fullname" id="" placeholder="Enter Full Name">
+
+                <p>Email Address</p>
+                <input class="right_container_input" type="email" name="email" id="" placeholder="Enter Email Address">
+                <p>User Name</p>
+                <input class="right_container_input" type="text" name="user_name" id="" placeholder="Enter User Name">
+                <p>Password</p>
+                <input class="right_container_input" type="password" name="password" id="" placeholder="******************">
+                <p>Phone Number</p>
+                <input class="right_container_input" type="number" name="phone" id="" placeholder="Enter Phone Number">
+                <p>Facebook Link</p>
+                <input class="right_container_input" type="text" name="facebook" id="" placeholder="Enter Facebook Link">
+                <p>Youtube Link</p>
+                <input class="right_container_input" type="text" name="youtube" id="" placeholder="Enter Youtube Link">
+                <p>Instagram Link</p>
+                <input class="right_container_input" type="text" name="instagram" id="" placeholder="Enter Instagram Link">
+                <p>Gmail</p>
+                <input class="right_container_input" type="text" name="gmail" id="" placeholder="Enter Gmail Id">
+                <p>Twitter Link</p>
+                <input class="right_container_input" type="text" name="twitter" id="" placeholder="Enter Twitter Link">
+                
+                
+                
+                
+                <br>
+
+               
+                <input class="right_container_submit" type="submit" value="Submit">
+            </form>
+            <% } else { %>
+                <script>alert("Only Admin And Moderator Can See")</script>
+            <p>Sorry Only Admin and Moderator and Manager Can See</p>
+            <% } %>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<%- include("./Footer") %>

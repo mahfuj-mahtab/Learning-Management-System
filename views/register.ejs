@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/Style/registration.css">
+    <script src="https://kit.fontawesome.com/5d4ee011b6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <div class="main_container">
+        <ul>
+            <li><a id="reg" href="#Register">Register</a></li>
+            <li><a id="log" href="#Login">Login</a></li>
+        </ul>
+        <div class="register">
+            <h3>Register Here</h3>
+        <form action="/signup" method="post">
+            <input type="text" name = "email" placeholder="Email">
+            <input type="text" name = "name"  placeholder="NAME">
+            <input type="text" name = "userName" placeholder="user name">
+            <input type="password" name = "password" placeholder="password">
+            <input type="submit" value="Register">
+        </form>
+        <!-- <a class="sig" href="">Login With Facebook</a>
+               <a class="sig" href="">Login With gmail</a>
+               <a class="sig cen" href="">Login With github</a>
+               <a href="/">already have account?</a> -->
+
+               <div class="bottom">
+                   <ul>
+                       <li><a href=""><i class="fab fa-google"></i></a></li>
+                       <li><a href=""><i class="fab fa-facebook"></i></a></li>
+                       <li><a href=""><i class="fab fa-github"></i></a></li>
+                   </ul>
+               </div>
+               <p>Already Have Account? <a class="bottom-login" href="">Login</a> <br>  <a class="bottom-login" href=""> Forgot Password?</a></p>
+            </div>
+
+
+            <div class="login none">
+                <h3>Login Here</h3>
+                <form action="/login" method="POST">
+                    <input type="email" placeholder="user name" name="email">
+                    <input type="password" placeholder="password" name="password">
+                    <input type="submit" value="login">
+ 
+                </form>
+                <div class="bottom">
+                    <ul>
+                        <li><a href=""><i class="fab fa-google"></i></a></li>
+                        <li><a href=""><i class="fab fa-facebook"></i></a></li>
+                        <li><a href=""><i class="fab fa-github"></i></a></li>
+                    </ul>
+                </div>
+                <p>Dont Have Account? <a class="bottom-login" href="">Register</a> <br>  <a class="bottom-login" href=""> Forgot Password?</a></p>
+            </div>
+
+
+    </div>
+
+<script>
+    const reg = document.querySelector("#reg");
+    const log = document.querySelector("#log");
+    const login = document.querySelector(".login");
+    const register = document.querySelector(".register");
+    log.addEventListener("click",()=>{
+        login.classList.remove("none");
+        register.classList.add("none");
+    })
+
+
+    reg.addEventListener("click",()=>{
+        register.classList.remove("none");
+        login.classList.add("none");
+    })
+
+
+</script>
+
+</body>
+</html>

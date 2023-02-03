@@ -16,10 +16,11 @@ exports.index = (req,res)=>{
 
     
     articleDetails.find((err,result)=>{
+        console.log(result)
         article.find({
-            coursename : result.coursename
+            coursename : result[0].coursename
         },(err,articleresult)=>{
-
+            console.log(articleresult[0])
             res.render("index",{results : result,articleresults : articleresult});
         })
     })
@@ -75,6 +76,7 @@ exports.showSingleArticle = (req,res)=>{
                         res.redirect("/")
                     }
                     else{
+                        console.log(articleDetailsResult)
                     res.render("SingleArticle",{results : result,articleresult:articleresult,articleDetailsResults : articleDetailsResult});
                     }
                 })

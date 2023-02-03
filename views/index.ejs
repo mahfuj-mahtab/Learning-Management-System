@@ -1,9 +1,10 @@
 <%- include("Home/Header"); %>
 <div class="banner">
+    <!-- <img class="smallicon2" src="/images/icons/2.png" alt=""> -->
 <div class="main_banner">
 
 <div class="left_banner">
-    <h1 class="bannerh1">Welcome To <span style="color: #03203C"> Tutorial Hubs</span></h1>
+    <h1 class="bannerh1">Welcome To <span style="color: #168199"> Tutorial Hubs</span></h1>
     <i class="banner_i">A Place For Great Learning</i>
     <form action="">
         <input type="text" placeholder="Please Enter What You Want To Learn" class="search"><input class="searchbtn" type="submit" value="Search">
@@ -12,54 +13,228 @@
     <a href="" class="shop_button">Shop</a>
 </div>
 <div class="right_banner">
-    <!-- <img class="banner_img" src="/images/Banner.png" alt=""> -->
+    <img class="banner_img" src="/images/Banner.png" alt="">
 </div>
+<img class="smallicon1" src="/images/icons/1.png" alt="">
 </div>
 </div>
 
 <!-- about section -->
-<div class="about_section">
+<!-- <div class="about_section">
     <div class="left_about_section">
         <h1 class="about_h1">What Is Tutorial Hubs?</h1>
         <span class="about_span">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus aut qui magni rem deserunt, temporibus minima aperiam perferendis veniam suscipit! Exercitationem rerum cupiditate beatae dolorem quisquam sit ut hic excepturi ex voluptas reprehenderit distinctio accusamus necessitatibus saepe ratione ducimus repudiandae tempora aliquid, eaque quaerat! Quod inventore et minus nulla adipisci. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo sapiente placeat necessitatibus tenetur laudantium repellendus ex iusto nulla consectetur. Assumenda autem debitis consequuntur aspernatur amet aliquid sunt expedita laboriosam nam!</span>
     </div>
     <div class="right_about_section">
-        <!-- <video class="about_video" width="500" height="300" poster="/images/b.jpg" controls>
-            <source src="/videos/movie.mp4" type="video/mp4">
-            <source src="movie.ogg" type="video/ogg">
-            Your browser does not support the video tag.
-         </video> -->
+      
     </div>
 
-</div>
-<div class="show_courses">
-    <h1 class="show_courses_h1">Our Courses</h1>
-<% results.forEach(function(result){ %>
-    
-        <div class="course">
-            <img class="course_banner_img" src="/Images/uploaded/<%= result.courselogo %>" alt="">
-            <p class="course_title"><%= result.coursename %></p>
-            <p class="course_video_count">Article : 30</p>
-            <p class="course_video_price">Price : Free</p><br><br>
-            <a href="/course/<%= result.coursename.replaceAll(' ','_') %>" class="course_details_button">Start Course</a>
+</div> -->
+
+<div class="showallarticle">
+    <div class="showarticleleft">
+        <h1 class="showarticleh1">Choose What You Want To Learn</h1>
+        <br>
+        <h4 class="showarticleh4">Start learning programming  language of <br> your choice</h4>
+<img class="smallicon2" src="/images/icons/3.png" alt="">
+<img class="smallicon4" src="/images/icons/6.png" alt="">
+<img class="smallicon3" src="/images/icons/5.png" alt="">
+
+    </div>
+    <div class="showarticleright">
+        <% results.forEach(function(result){ %>
+        <a href="/course/<%= result.coursename.replaceAll(' ','_') %>">
+        <div class="articlediv">
+            <img class="articledivimg" src="/Images/Uploaded/<%= result.courselogo %>" alt="">
+            <h1 class="articledivtitle"><%= result.coursename.replaceAll(' ','_') %></h1>
+        </div>
+    </a>
+    <% }); %>
+        <div class="articlediv">
+            <img class="articledivimg" src="/Images/b.jpg" alt="">
+            <h1 class="articledivtitle">Javascript</h1>
+        </div>
+
+        <div class="articlediv">
+            <img class="articledivimg" src="/Images/b.jpg" alt="">
+            <h1 class="articledivtitle">Machine Learning</h1>
         </div>
 
 
-<% }); %>
+        <!-- <div class="articlediv">
+            <img class="articledivimg" src="/Images/b.jpg" alt="">
+            <h1 class="articledivtitle">Html</h1>
+        </div> -->
 
 
+        <div class="articlediv">
+            <img class="articledivimg" src="/Images/b.jpg" alt="">
+            <h1 class="articledivtitle">Css</h1>
+        </div>
 
+        <div class="articlediv">
+            <img class="articledivimg" src="/Images/b.jpg" alt="">
+            <h1 class="articledivtitle">Python</h1>
+        </div>
 
+        <div class="articlediv">
+            <img class="articledivimg" src="/Images/b.jpg" alt="">
+            <h1 class="articledivtitle">Python</h1>
+        </div>
+
+        <div class="articlediv">
+            <img class="articledivimg" src="/Images/b.jpg" alt="">
+            <h1 class="articledivtitle">Python</h1>
+        </div>
+
+        <div class="articlediv">
+            <!-- <img class="articledivimg" src="/Images/b.jpg" alt=""> -->
+            <h1 class="articledivtitlesee">See All Tutorial</h1>
+        </div>
+
+    </div>
+</div>
+<div class="todaysquizsection">
+    <div class="lefttodaysquizsection">
+        <h1 class="quiztitletop">Todays Quiz</h1>
+        <h4 class="quiztitle">Programming Quiz</h4>
+        <p class="quizdetailshort">Lorem ipsum dolor sore expedita consectetur possimus ex aliquid neque beatae reiciendis iure quaerat, officiis odit eum! Accusantium, temporibus.</p>
+        <a href="" class="participate">Participate</a>
+    </div>
+    <div class="righttodaysquizsection">
+        <img src="/Images/b.jpg" alt="" class="right_quiz_img">
+
+    </div>
+</div>
+
+<div class="summarysection">
+    <div class="sum a">
+        <img src="/Images/b.jpg" alt="" class="sumimg "> <h3 class="sum_title">500+ Videos</h3>
+    </div>
+
+    <div class="sum b">
+        <img src="/Images/b.jpg" alt="" class="sumimg"> <h3 class="sum_title">500+ Videos</h3>
+    </div>
+
+    <div class="sum c">
+        <img src="/Images/b.jpg" alt="" class="sumimg"> <h3 class="sum_title">500+ Videos</h3>
+    </div>
+
+    <div class="sum d">
+        <img src="/Images/b.jpg" alt="" class="sumimg"> <h3 class="sum_title">500+ Videos</h3>
+    </div>
+
+    
   
 </div>
 
+
+<div class="show_courses">
+    <h1 class="show_courses_h1">Our Courses</h1>
+
+    
+        <div class="course">
+            <img class="course_banner_img" src="/Images/b.jpg" alt="">
+            <p class="course_title">Python Begineer To Advance</p>
+            <!-- <p class="course_video_count">Article : 30</p> -->
+            <p class="course_video_price">Price : Free</p><br><br>
+            <a href="/cou" class="course_details_button">Start Course</a>
+        </div>
+        <div class="course">
+            <img class="course_banner_img" src="/Images/b.jpg" alt="">
+            <p class="course_title">Python Begineer To Advance</p>
+            <!-- <p class="course_video_count">Article : 30</p> -->
+            <p class="course_video_price">Price : Free</p><br><br>
+            <a href="/course" class="course_details_button">Start Course</a>
+        </div>
+        <div class="course">
+            <img class="course_banner_img" src="/Images/b.jpg" alt="">
+            <p class="course_title">Python Begineer To Advance</p>
+            <!-- <p class="course_video_count">Article : 30</p> -->
+            <p class="course_video_price">Price : Free</p><br><br>
+            <a href="/course" class="course_details_button">Start Course</a>
+        </div>
+        <div class="course">
+            <img class="course_banner_img" src="/Images/b.jpg" alt="">
+            <p class="course_title">Python Begineer To Advance</p>
+            <!-- <p class="course_video_count">Article : 30</p> -->
+            <p class="course_video_price">Price : Free</p><br><br>
+            <a href="/course/" class="course_details_button">Start Course</a>
+        </div>
+        <div class="course">
+            <img class="course_banner_img" src="/Images/b.jpg" alt="">
+            <p class="course_title">Python Begineer To Advance</p>
+            <!-- <p class="course_video_count">Article : 30</p> -->
+            <p class="course_video_price">Price : Free</p><br><br>
+            <a href="/course/" class="course_details_button">Start Course</a>
+        </div>
+        <div class="course">
+            <img class="course_banner_img" src="/Images/b.jpg" alt="">
+            <p class="course_title">Python Begineer To Advance</p>
+            <!-- <p class="course_video_count">Article : 30</p> -->
+            <p class="course_video_price">Price : Free</p><br><br>
+            <a href="/course/" class="course_details_button">Start Course</a>
+        </div>
+        <div class="course">
+            <img class="course_banner_img" src="/Images/b.jpg" alt="">
+            <p class="course_title">Python Begineer To Advance</p>
+            <!-- <p class="course_video_count">Article : 30</p> -->
+            <p class="course_video_price">Price : Free</p><br><br>
+            <a href="/course/" class="course_details_button">Start Course</a>
+        </div>
+        <div class="course">
+            <img class="course_banner_img" src="/Images/b.jpg" alt="">
+            <p class="course_title">Python Begineer To Advance</p>
+            <!-- <p class="course_video_count">Article : 30</p> -->
+            <p class="course_video_price">Price : Free</p><br><br>
+            <a href="/course/" class="course_details_button">Start Course</a>
+        </div>
+
+
+
+
+
+
+</div>
+<a href="" class="seemorecourse">See All Course</a>
+
 <div class="aboutquizsection">
-    <div class="leftaboutquizsection"></div>
+    <div class="leftaboutquizsection">
+        <h2 class="quiztitle colorwhite">Programming Quiz</h2>
+        <p class="quizdetailshortp colorwhite">Lorem ipsum dolor sore expedita consectetur possimus ex aliquid neque beatae reiciendis iure quaerat, officiis odit eum! Accusantium, temporibus.</p>
+        <a href="" class="participate">Participate</a>
+
+    </div>
     <div class="rightaboutquizsection"></div>
 </div>
 
+<div class="aboutyoutubesection">
+    <div class="leftaboutyoutubesection">
+        <h2 class="quiztitle ">Visit TutorialHubs Bangla</h2>
+        <p class="quizdetailshortp ">Lorem ipsum dolor sore expedita consectetur possimus ex aliquid neque beatae reiciendis iure quaerat, officiis odit eum! Accusantium, temporibus.</p>
+        <a href="" class="participate2">Visit Youtube</a>
 
+    </div>
+    <div class="rightaboutyoutubesection">
+        <h2 class="quiztitle ">Visit TutorialHubs English</h2>
+        <p class="quizdetailshortp ">Lorem ipsum dolor sore expedita consectetur possimus ex aliquid neque beatae reiciendis iure quaerat, officiis odit eum! Accusantium, temporibus.</p>
+        <a href="" class="participate2">Visit Youtube</a>
+    </div>
+</div>
 
+<div class="aboutyoutubesection">
+    <div class="leftaboutyoutubesection">
+        <h2 class="quiztitle ">Visit TutorialHubs Bangla</h2>
+        <p class="quizdetailshortp ">Lorem ipsum dolor sore expedita consectetur possimus ex aliquid neque beatae reiciendis iure quaerat, officiis odit eum! Accusantium, temporibus.</p>
+        <a href="" class="participate2">Visit Youtube</a>
+
+    </div>
+    <div class="rightaboutyoutubesection">
+        <h2 class="quiztitle ">Visit TutorialHubs English</h2>
+        <p class="quizdetailshortp ">Lorem ipsum dolor sore expedita consectetur possimus ex aliquid neque beatae reiciendis iure quaerat, officiis odit eum! Accusantium, temporibus.</p>
+        <a href="" class="participate2">Visit Youtube</a>
+    </div>
+</div>
 
 
 

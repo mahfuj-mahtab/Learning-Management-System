@@ -1,6 +1,70 @@
 <%- include("Home/Header"); %>
+<div class="tagsection">
+    <div class="tagsectionleft">
+    <ul>
+        <li><a class="home" href="">Home</a></li>
+        <li><a class="black" href="">Home</a></li>
+        <li><a class="black" href="">Home</a></li>
+        <li><a class="black" href="">Home</a></li>
+        <li><a class="black" href="">Home</a></li>
+        <li><a class="black" href="">Home</a></li>
+        <li><a class="black" href="">Home</a></li>
+        <li><a class="black" href="">Home</a></li>
+        <li><a class="black" href="">Home</a></li>
+        <li><a class="black" href="">Home</a></li>
+  
+    </ul>
+</div>
+<div class="tagsectionright">
+<form action="">
+   <input type="text" placeholder="Please Enter What You Want To Learn">
+   <input type="submit" value="Search"> 
+</form>
+</div>
+</div>
+<div class="articledetails">
+
+        <div class="left_articlesection">
+            <img class="logo" src="/Images/uploaded/<%= articleDetailsResults[0].courselogo %>" alt="">
+            <h2 class="articledetailsname"><%= articleDetailsResults[0].coursename %></h2>
+            <ul>
+                <% results.forEach(function(article){ %>
+                    <li><a href="/course/<%= article.coursename.replaceAll(' ','_') %>/<%= article.articletitle.replaceAll(' ','_') %>"><%= article.articletitle %></a></li>
+                    <%   }); %>
+            </ul>
+        </div>
+        <div class="right_articlesection">
+            <img src="/Images/uploaded/<%= articleDetailsResults[0].coursebanner %>" class="article_banner_img" alt="">
+            <div class="article">
+                <%- articleresult[0].articlebody %> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi quae ad consequuntur sint nam ullam fuga aut ea suscipit voluptates recusandae, unde quia obcaecati magni in beatae repellat illum nisi cupiditate? Quisquam quod culpa laudantium? Fuga cum, ab veniam omnis veritatis tenetur voluptatum quas nobis sit sed! Quisquam quod sequi distinctio quidem amet, excepturi a iusto? Maxime vel doloribus ex cumque nostrum, vitae repudiandae ipsam iure aperiam placeat maiores voluptate non eius possimus esse aliquam debitis eos est? Aspernatur quod culpa veniam voluptate illum voluptas excepturi sit natus enim, magnam alias nulla quam, ab eaque incidunt adipisci facere officiis. Aspernatur voluptas repellendus nam nesciunt saepe quo ab, totam illo, magni perspiciatis a dolorem quod incidunt eius ipsa nulla eos! Deserunt perferendis voluptatem velit, porro eveniet quas explicabo dolorum similique veritatis alias eligendi rem tenetur qui vel sit ea fugit? Fugiat non maxime aliquid totam? Culpa, in possimus veniam, minima placeat, autem officia odit soluta porro molestias voluptate iste fugit harum reprehenderit quaerat est magnam cumque quis. Tenetur porro omnis esse, illo rem repudiandae, in, voluptates dicta corrupti impedit hic? Error qui perferendis hic tenetur assumenda voluptates quis exercitationem minus at dicta? Adipisci aperiam optio nobis vel facilis neque debitis at, numquam quis cum cupiditate fugit aut aliquid ea autem sed? Necessitatibus expedita magni eaque. Ut temporibus, inventore laboriosam magnam atque repudiandae deleniti exercitationem veniam? Provident consequatur non distinctio omnis voluptates? Placeat delectus velit magni omnis quos, iusto dicta deleniti dolor dolore excepturi nulla, cumque laboriosam, id suscipit? Officiis dolores est doloribus voluptate, eius quis commodi nisi facere reprehenderit ea dolorem fugiat ipsa voluptatibus quasi beatae, sapiente rem veritatis cumque enim qui cupiditate! Incidunt quis est beatae, esse perspiciatis veniam ipsam repudiandae vitae, aperiam explicabo, tenetur cumque. Quis perspiciatis sunt saepe, labore debitis minima molestiae maxime dolor ullam cumque maiores quibusdam!
+                <br>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque voluptatem illo iusto consequuntur earum magni beatae minus doloribus veritatis maxime, quo repellendus nostrum eaque laboriosam facere saepe molestiae asperiores culpa hic deserunt ducimus incidunt nobis? Ipsam, obcaecati facere sunt natus, ex molestias sed voluptate tenetur et sit nemo commodi perspiciatis mollitia? Eum doloribus consequatur quisquam, nulla ipsam laborum vero voluptas rem facere officia iusto voluptate fuga obcaecati accusamus explicabo perferendis suscipit distinctio incidunt nobis quam deserunt neque optio! Iusto fuga possimus ipsum necessitatibus eligendi tenetur expedita omnis aliquid numquam, consequatur iure? Accusamus illum voluptatibus recusandae fugiat debitis iure laborum officiis molestiae, tenetur vero voluptate quam eum odio adipisci deleniti quaerat maxime reprehenderit excepturi corrupti commodi repellat totam repudiandae distinctio quod. br 
+                <br>
+                Autem, expedita quae? Pariatur quaerat exercitationem placeat numquam unde magnam temporibus ipsum possimus est quisquam obcaecati fugiat beatae porro, eaque magni sint in voluptate facere dolore doloribus asperiores veritatis qui. Quo quasi eaque officiis? Quasi unde fugiat esse perspiciatis ad aut expedita vel quas dolor ipsam, officiis est exercitationem consequuntur at eaque reprehenderit, dicta obcaecati maxime amet facilis? Nihil debitis dicta suscipit fuga vero iste assumenda, atque dolores ab laboriosam tempore odit rem nam, dolor minima inventore dolorem vitae tempora praesentium quam dolorum tenetur necessitatibus expedita asperiores? Impedit quaerat expedita tempore, sunt dignissimos placeat adipisci assumenda esse reiciendis? Doloremque saepe numquam, aspernatur magni, reiciendis sapiente non delectus accusantium tenetur animi eum cum nam officiis perspiciatis voluptate, expedita libero incidunt! Veniam molestiae quae aspernatur, sapiente architecto ad perspiciatis numquam, quam optio cupiditate laborum possimus ipsam vel provident laboriosam vero impedit quaerat magnam porro alias? Nulla praesentium eum quod enim adipisci dolore nemo necessitatibus, consequuntur assumenda illo beatae, ea reiciendis, exercitationem deserunt quae labore. Laboriosam nisi facilis dicta rem quidem vel accusantium facere dolorum, cumque similique perspiciatis, qui adipisci ratione nihil labore.
+            </div>
+            <div class="left_button"><a class="lrbtn" href="">Previous</a></div>
+            <div class="right_button"><a class="lrbtn" href="">Next</a></div>
+        </div>
+       
+        <div class="newsletter">
+            <img src="/Images/newsletter.png" alt="" class="news_logo">
+            <h2 class="subh2">Want Programming Tips?  <br>  <span class="sp"> Subscribe Now </span></h2>
+            <form action="">
+                <input type="text" placeholder="Subscribe Newsletter"> <br>
+                <input type="submit" value="Subscribe">
+            </form>
+        </div>
+        <div class="advertisesection">
+
+        </div>
+        <div class="bottomadvertise">
+            
+        </div>
+  
+</div>
 
 
+<!-- 
 <div class="articledetails">
     <div class="main">
         <div class="left_articlesection">
@@ -20,7 +84,7 @@
 
         </div>
     </div>
-</div>
+</div> -->
 
 
 

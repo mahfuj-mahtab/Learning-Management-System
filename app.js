@@ -18,7 +18,7 @@ const fileUpload = require("express-fileupload");
 
 
 // database connection
-mongoose.connect("mongodb://localhost/TutorialHubs")
+mongoose.connect("mongodb://127.0.0.1:27017/TutorialHubs",{ useUnifiedTopology: true, useNewUrlParser: true})
 
 
 
@@ -36,11 +36,11 @@ app.use(session({
   // app.use(f())
 app.use(flash());
 app.use(fileUpload());
-bcrypt.hash("mohot",10,(err,hash)=>{
+// bcrypt.hash("mohot",10,(err,hash)=>{
 
-    const user = new admin({name : "Mahfuj Mahtab Mohot",email : "mohotmohot1@gmail.com",password : hash,profile_pic:"default.png",phone : "01765045048",roles:"admin",user_name : "mohot",verified : "true",approved : true});
-    user.save();
-});
+//     const user = new admin({name : "Mahfuj Mahtab Mohot",email : "mohotmohot1@gmail.com",password : hash,profile_pic:"default.png",phone : "01765045048",roles:"admin",user_name : "mohot",verified : "true",approved : true});
+//     user.save();
+// });
 
 // const cookie = 
 

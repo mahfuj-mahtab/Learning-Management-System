@@ -7,7 +7,7 @@ const admin = require("./model/admin");
 const bcrypt = require("bcrypt");
 const bodyParser = require("body-parser");
 const {adminLogin,adminLoginPost,AdminDashboardHandler,adminLogOut,adminAddUser,adminAddUserPost,showUser,addinstructor,addinstructorPost,showinstructor,addCourseDetailsGet,addCourseDetailsPost,addVideoGet,addVideoPost,addArticle,addArticleDetails,addArticleDetailsPost,addArticlePost,addCategory,addCategoryPost,addSubject,addSubjectPost,showArticle,editArticle,updateArticlePost,addQuizDetails,addQuizDetailsPost,addQuizQuestion,addQuizQuestionPost} = require("./controllers/adminController");
-const {index,studentLogin,showCourse,showSingleArticle,register,registerPost,login,showQuiz,attemptquiz} = require("./controllers/index");
+const {index,studentLogin,showCourse,showSingleArticle,register,registerPost,login,showQuiz,attemptquiz,Newsletter} = require("./controllers/index");
 const cookirParser = require("cookie-parser");
 const session = require('express-session')
 const flash = require('connect-flash');
@@ -89,6 +89,7 @@ app.post("/signup",registerPost)
 app.post("/login",login)
 app.get("/showquiz/:quizId",showQuiz)
 app.post("/done/:quizId",attemptquiz)
+app.post("/newsletter", Newsletter)
 app.listen(3000,(req,res)=>{
 
 })

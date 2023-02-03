@@ -7,6 +7,7 @@ const User = require("../model/student");
 const bcrypt = require('bcrypt');
 const questions = require("../model/quizans")
 const quizs = require("../model/quizdetails");
+const newsletter = require("../model/newsletter");
 let sessions;
 
 
@@ -167,7 +168,7 @@ exports.login = (req,res)=>{
                 }
                 else {
                     console.log("password did not match")
-                     res.redirect("register")
+                    res.redirect("register")
 
                 }
             })
@@ -195,4 +196,23 @@ exports.showQuiz = (req,res)=>{
 
 exports.attemptquiz = (req,res)=>{
     console.log(req.params.quizId)
+}
+exports.Newsletter = (req,res)=>{
+    email = req.body.newsemail;
+    newsletter.find({email : email},(err,result)=>{
+        if(err){
+            console.log(err)
+        }
+        else{
+            if(result.length > 0 ){
+                console.log("Email already available in database")
+            }
+            else{
+                const news = new newsletter({email : email, subscribed : true})
+                news.save()
+            }
+        }
+
+    });
+
 }

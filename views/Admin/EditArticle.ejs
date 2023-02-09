@@ -1,5 +1,5 @@
 <%- include("./Header",users) %>
-<script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
+<!-- <script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script> -->
 
 
 <div class="container">
@@ -14,7 +14,7 @@
                 <input type="text" name="articletitle" id="" class="right_container_input" placeholder="Enter Article Title"  value="<%= results[0].articletitle %>">
                 <p>Article Body</p>
                 
-                <textarea name="articlebody" id="editor" cols="60" rows="30"><%- results[0].articlebody %></textarea> 
+                <textarea name="articlebody" id="editor" cols="60" rows="30"><%= results[0].articlebody %></textarea> 
           
                 <br><br>
 
@@ -36,13 +36,20 @@
     </div>
 </div>
 
-<script>
+<!-- <script>
     ClassicEditor
         .create( document.querySelector( '#editor' ) )
         .catch( error => {
             console.error( error );
         } );
-</script>
+</script> -->
 
 
+<script>
+    tinymce.init({
+      selector: 'textarea',
+      plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+      toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+    });
+  </script>
 <%- include("./Footer") %>

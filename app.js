@@ -34,8 +34,8 @@ app.use(session({
     cookie: { secure: true }
   }))
   // app.use(f())
-app.use(flash());
-app.use(fileUpload());
+// app.use(flash());
+// app.use(fileUpload());
 // bcrypt.hash("mohot",10,(err,hash)=>{
 
 //     const user = new admin({name : "Mahfuj Mahtab Mohot",email : "mohotmohot1@gmail.com",password : hash,profile_pic:"default.png",phone : "01765045048",roles:"admin",user_name : "mohot",verified : "true",approved : true});
@@ -44,11 +44,11 @@ app.use(fileUpload());
 
 // const cookie = 
 
-// app.get('/flash', function(req, res){
-//   // Set a flash message by passing the key, followed by the value, to req.flash().
-//   req.flash('info', 'Flash is back!')
-//   res.redirect('/');
-// });
+app.get('/flash', function(req, res){
+  // Set a flash message by passing the key, followed by the value, to req.flash().
+  req.flash('info', 'Flash is back!')
+  res.redirect('/');
+});
 
 
 app.get("/",index)
